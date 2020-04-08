@@ -1314,3 +1314,56 @@ line-height: 20px;
     width: 100%;
     right: 0;
 }
+
+/* limited item */
+	.featured-item-container {
+		background: #bd3030;
+		width: 50%;
+	}
+	
+	.featured-item-container:first-of-type{
+		background: #fff;
+	}
+
+	.featured-image{
+		display: flex;
+		justify-content: center;
+		position: relative;
+		margin-top: -25%;
+		top: 50%;
+	}
+
+	.super-deal-countdown .time_circles > div {
+		width: auto !important;
+		margin-right: 5px;
+		display: inline-block;
+		vertical-align: middle;
+		min-width: 50px;
+		min-height: 50px;
+		text-align: center;
+		background: #f6f6f6;
+		color: #a7a7a7;
+		font-size: 14px;
+		line-height: 21px;
+		text-transform: capitalize;
+		padding: 6px;
+		margin-top: 15px;
+		border-radius: 100%;
+	}
+	
+	.super-deal-countdown .time_circles>div .number {
+		display: block;
+		color: #222;
+		font-size: 12px;
+		font-weight: 500;
+		font-family: 'Rubik',sans-serif;
+		line-height: 14px;
+		padding-top: 6px;
+	}
+	
+	.super-deal-countdown .time_circles>div .text {
+		font-family: 'Rubik',sans-serif;
+		font-size: 10px;
+		font-weight: 400;
+		color: #888;
+	}

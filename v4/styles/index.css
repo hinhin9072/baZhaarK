@@ -134,4 +134,22 @@ only screen and (min-width: 240px) and (max-width: 1024px)
 	.promo li div.style-02, .promo li div.style-03 {
 		padding: 0;
 	}
+	
+	.super-deal-countdown .time_circles > div {
+		width: auto !important;
+		margin-right: 5px;
+		display: inline-block;
+		vertical-align: middle;
+		min-width: 50px;
+		min-height: 50px;
+		text-align: center;
+		background: #f6f6f6;
+		color: #a7a7a7;
+		font-size: 14px;
+		line-height: 21px;
+		text-transform: capitalize;
+		padding: 6px;
+		margin-top: 15px;
+		border-radius: 100%;
+	}
 }
