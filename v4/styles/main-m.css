@@ -39,6 +39,18 @@ only screen and (min-width: 240px) and (max-width: 630px)
 	}
 	
 	/* item list */
+	.brand-container .pi-item-container {
+		zoom: 0.8;
+	}
+	
+	.brand-container .pi-container .pi-content-container .pi-tag-list{
+		display: none;
+	}
+	
+	.brand-container .pi-container .pi-indicator-container .pi-status:after{
+		margin-top: -10px;
+	}
+	
 	.item-main-container{
 		margin: 0 10px;
 	}
