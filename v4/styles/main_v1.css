@@ -1,3 +1,7 @@
+html, body {
+    height: auto !important;
+}
+
 body{
 	position: relative;
 	display: flex;
@@ -212,7 +216,6 @@ a {
 }
 
 .page-main{
-	width: 100%;
 	position: relative;
 	left: 0;	
 	-webkit-transition: left 0.3s ease-in-out;
@@ -1099,6 +1102,7 @@ height: 50px;
     box-shadow: -2px 2px 2px -2px rgba(59, 62, 77, 0.75);
 	border-radius: 5px;
 	border: 1px solid #d5e3ed;
+	overflow: hidden;
 }
 
 .btn-round .style-04:hover{
@@ -1146,6 +1150,7 @@ height: 50px;
     box-shadow: -2px 2px 2px -2px rgba(59, 62, 77, 0.75);
 	border-radius: 5px;
 	border: 1px solid #d5e3ed;
+	overflow: hidden;
 }
 
 

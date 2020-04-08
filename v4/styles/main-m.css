@@ -22,8 +22,8 @@ only screen and (min-width: 240px) and (max-width: 630px)
 		border-radius: 10px;
 	}
 	
-	.str-header .search input{
-		width: 200px;
+	.str-header .search-container{
+		width: 90%;
 	}
 	
 	/* item list */

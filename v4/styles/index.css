@@ -13,47 +13,6 @@ only screen and (min-width: 240px) and (max-width: 1024px)
 		display: none !important;
 	}
 	
-	.showSlide{
-		overflow: hidden;
-	}
-	
-	.showSlide .slide-nav{
-		left: 0;
-	}
-	
-	.showSlide .page-main{
-		left: calc(90% - 54px);
-	}
-	
-	.showSlide #page-mask{
-		display: block;
-	}
-	
-	.showSlide .side_float{
-		bottom: -100%;
-	}
-	
-	.slide-nav{
-		background: #fff none repeat scroll 0 0;
-		height: 100%;
-		left: calc(-1 * (100% - 54px));
-		overflow: auto;
-		position: fixed;
-		top: 0;
-		-webkit-transition: left 0.3s ease-in-out;
-		-moz-transition: left 0.3s ease-in-out;
-		-ms-transition: left 0.3s ease-in-out;
-		-o-transition: left 0.3s ease-in-out;
-		transition: left 0.3s ease-in-out;
-		width: calc(90% - 54px);
-		
-		-webkit-box-shadow: 0 0 5px 0 rgba(50,50,50,0.75);
-		-moz-box-shadow: 0 0 5px 0 rgba(50,50,50,0.75);
-		-ms-box-shadow: 0 0 5px 0 rgba(50,50,50,0.75);
-		box-shadow: 0 0 5px 0 rgba(50,50,50,0.75);
-		z-index: 1001;
-	}
-	
 	.str-header h1{
 		display: none;
 	}

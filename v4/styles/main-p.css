@@ -22,7 +22,7 @@ only screen and (min-width: 240px) and (max-width: 1024px)
 	}
 	
 	.showSlide .page-main{
-		left: calc(90% - 54px);
+		/*left: calc(90% - 54px);*/
 	}
 	
 	.showSlide #page-mask{
@@ -97,7 +97,7 @@ only screen and (min-width: 240px) and (max-width: 1024px)
 	}
 	
 	footer ul.grid .grid-item-container.excludeDesktop:first-of-type svg{
-	   padding: 10px 30px;
+	   padding: 10px;
 		margin-top: -10px;
 	}
 	
@@ -133,7 +133,7 @@ only screen and (min-width: 240px) and (max-width: 1024px)
 		display: block !important;
 		position: fixed;
 		width: 100%;
-		z-index: 400;
+		z-index: 250;
 		box-shadow: -2px 2px 2px -2px rgba(59, 62, 77, 0.75);
 		top: 0;
 		transition-delay: 0.2s;
