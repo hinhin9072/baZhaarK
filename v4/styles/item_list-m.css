@@ -1,0 +1,59 @@
+@media only screen and (max-width: 630px),
+only screen and (min-width: 240px) and (max-width: 630px) 
+{
+	
+	#item-main-list .pi-item-container{
+		width: 90%;
+		margin: 10px auto 40px;
+	}
+	
+	#item-main-list .pi-container{
+		max-width: 100%;
+		display: block;
+	}
+	
+	#item-main-list .pi-container .pi-image-container .pi-image img {
+		height: 200px;
+		display: block;
+		margin: 0 auto;
+	}
+	
+	#item-main-list .pi-container .pi-float.pi-indicator-container{
+		top: inherit;
+		bottom: -50px;
+	}
+	
+	#item-main-list .pi-item-container .pi-container .pi-indicator-container .pi-status-container{
+		display: flex;
+	}
+	
+	#item-main-list .pi-container .pi-indicator-container .pi-status{
+		margin-left: 10px;
+	}
+	
+	#item-main-list .pi-container .pi-content-container .pi-desc{
+		padding-top: 50px;
+		height: 200px;
+	}
+	
+	#item-main-list .pi-detail{
+		margin-top: 20px;
+		display: inline-block !important;
+	}
+	
+	#item-main-list .pi-detail h4
+	{
+		color: #20599b;
+	}
+	
+	#item-main-list .pi-regionText{
+		line-height: 35px;
+		font-size: 12px;
+		display: inline-block !important;
+	}
+	
+	#item-main-list .pi-container .pi-content-container .pi-desc .pi-name{
+		font-size: 18px;
+		font-weight: 600;
+	}
+}

@@ -1,0 +1,138 @@
+.slide-nav .menu-content{
+	display: block;
+}
+
+.slide-nav .menu-content li{
+	line-height: 40px;
+	border-bottom: 1px solid #8c969f;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.slide-nav .menu-content li:hover{
+	background: #fbb741;
+}
+
+.slide-nav .menu-content li.search{
+	background: #1c4b75;
+    background-image: linear-gradient(to right, #3372c5, #275680);
+	position: relative;
+	display: flex;
+}
+
+.slide-nav .menu-content li.search input{
+	width: 90%;
+    display: flex;
+    padding: 9px 0 9px 10px;
+    margin: 0;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    color: #8c969f;
+    background-color: #FFFFFF;
+	border-radius: 10px 0 0 10px;
+}
+
+.slide-nav .menu-content li.search .searchIcon{
+    text-align: center;
+    display: inline-block;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -moz-box-pack: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+	background-color: #FFFFFF;
+	width: 10%;
+	border-radius: 0 10px 10px 0;
+}
+
+.slide-nav .menu-content li.search .searchIcon img{
+	width: 60%;
+	height: 60%;
+    vertical-align: middle;
+    -webkit-filter: invert(.8);
+    filter: invert(.8);
+	margin: 0;
+}
+
+.slide-nav .menu-content li.search.text-in .searchIcon{
+	background: #fbb741;
+}
+
+.slide-nav .menu-content li.search.text-in .searchIcon img{
+	-webkit-filter: invert(.2);
+	filter: invert(.2);
+}
+
+
+.slide-nav_ li.promo::after {
+    background: url(../images/sunshinecity/bg_contents_cmn_pc_01.png) center top repeat-x;
+    background-size: auto;
+    bottom: 0;
+    height: 20px;
+    -webkit-animation: moveBgMainPc 10s infinite linear;
+    animation: moveBgCommonPc 10s linear;
+    animation-iteration-count: infinite;
+    display: block;
+    position: absolute;
+    width: 100%;
+    content: "";
+}
+
+.slide-nav li.promo{
+	display: inline-block;
+	background: none;
+	border: none;
+	padding: 0;
+	position: relative;
+}
+
+.slide-nav li.promo:hover{
+	background: none;
+}
+
+.slide-nav .icon{
+	display: inline-block;
+}
+
+.slide-nav .promo img{
+	width: 100%;
+}
+
+.menu-bottom-content{
+	position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.slide-nav .icon{
+	background: url(../images/icons/145.png);
+    width: 40px;
+    height: 40px;
+	
+    background-size: 1100%;
+	margin: 10px 10px 0 4px;	
+	cursor: pointer;
+}
+
+.slide-nav .fb-icon{
+	background-position: -65px 1070px;
+}
+
+.slide-nav .yt-icon{
+	background-position: -110px 1070px;
+}
+
+.slide-nav .ig-icon{
+	background-position: -110px 1106px;
+}

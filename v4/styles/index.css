@@ -1,0 +1,178 @@
+@media only screen and (max-width: 1024px),
+only screen and (min-width: 240px) and (max-width: 1024px) 
+{
+	.excludeDesktop{
+		display: inline-block;
+	}
+	
+	.desktopOnly{
+		display: none !important;
+	}
+	
+	.header-scroll{
+		display: none !important;
+	}
+	
+	.showSlide{
+		overflow: hidden;
+	}
+	
+	.showSlide .slide-nav{
+		left: 0;
+	}
+	
+	.showSlide .page-main{
+		left: calc(90% - 54px);
+	}
+	
+	.showSlide #page-mask{
+		display: block;
+	}
+	
+	.showSlide .side_float{
+		bottom: -100%;
+	}
+	
+	.slide-nav{
+		background: #fff none repeat scroll 0 0;
+		height: 100%;
+		left: calc(-1 * (100% - 54px));
+		overflow: auto;
+		position: fixed;
+		top: 0;
+		-webkit-transition: left 0.3s ease-in-out;
+		-moz-transition: left 0.3s ease-in-out;
+		-ms-transition: left 0.3s ease-in-out;
+		-o-transition: left 0.3s ease-in-out;
+		transition: left 0.3s ease-in-out;
+		width: calc(90% - 54px);
+		
+		-webkit-box-shadow: 0 0 5px 0 rgba(50,50,50,0.75);
+		-moz-box-shadow: 0 0 5px 0 rgba(50,50,50,0.75);
+		-ms-box-shadow: 0 0 5px 0 rgba(50,50,50,0.75);
+		box-shadow: 0 0 5px 0 rgba(50,50,50,0.75);
+		z-index: 1001;
+	}
+	
+	.str-header h1{
+		display: none;
+	}
+	
+	.top-banner header{
+		display: none !important;
+	}
+	
+	.top-banner .slider img{
+		padding: 0;
+		width: 100%;
+	}
+	
+	.top-banner .visual-container::after{
+		min-height: 100px;
+	}
+	
+	.promo .main-container {
+		max-width: 1180px;
+		margin: 0 auto;
+		overflow: hidden;
+		height: 40px;
+	}
+	
+	.promo ul {
+		display: block;
+		position: relative;
+		-webkit-animation: promoScroll 8s infinite linear;
+		animation: promoScroll 8s linear;
+		animation-iteration-count: infinite;
+	}
+	
+	.promo li{
+		width: 100%;
+	}
+	
+	@-webkit-keyframes promoScroll {
+	  0% {
+		top: 100%;
+	  }
+	  
+	  5% {
+		 top: 0%;
+	  }
+	  
+	  34% {
+		  top: 0%;
+	  }
+	  
+	  
+	  35% {
+		 top: -100%;
+	  }
+	  
+	  64% {
+		 top: -100%;
+	  }
+	  
+	  65% {
+		 top: -200%;
+	  }
+
+	  94% {
+		top: -200%;
+	  }
+	  
+	  95% {
+		top: -300%;
+	  }
+	  
+	  100% {
+		top: -300%;
+	  }
+	}
+
+	@keyframes promoScroll {
+	  0% {
+		top: 100%;
+	  }
+	  
+	  5% {
+		 top: 0%;
+	  }
+	  
+	  30% {
+		  top: 0%;
+	  }
+	  
+	  
+	  35% {
+		 top: -100%;
+	  }
+	  
+	  60% {
+		 top: -100%;
+	  }
+	  
+	  65% {
+		 top: -200%;
+	  }
+
+	  90% {
+		top: -200%;
+	  }
+	  
+	  95% {
+		top: -300%;
+	  }
+	  
+	  100% {
+		top: -300%;
+	  }
+	}
+	
+	.promo .sep {
+		border-left: none;
+	}
+	
+	.promo li div.style-02, .promo li div.style-03 {
+		padding: 0;
+	}
+}
