@@ -216,6 +216,7 @@ a {
 }
 
 .page-main{
+	width: 100%;
 	position: relative;
 	left: 0;	
 	-webkit-transition: left 0.3s ease-in-out;

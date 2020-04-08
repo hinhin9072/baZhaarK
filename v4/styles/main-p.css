@@ -13,6 +13,19 @@ only screen and (min-width: 240px) and (max-width: 1024px)
 		display: none !important;
 	}
 	
+	.str-header .search-container{
+		width: calc(100% - 120px);
+	}
+	
+	.str-header .search, .header-nav .cart {
+		display: flex;
+		width: 100%;
+	}
+	
+	.str-header .search input{
+		width: 100%;
+	}
+	
 	.showSlide, .showBtmSlide{
 		overflow: hidden;
 	}
