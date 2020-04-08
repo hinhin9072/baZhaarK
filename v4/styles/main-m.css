@@ -23,7 +23,19 @@ only screen and (min-width: 240px) and (max-width: 630px)
 	}
 	
 	.str-header .search-container{
-		width: calc(100% - 120px);
+		width: calc(100% - 60px);
+	}
+	
+	.breadcrumb_container .current-page{
+		text-align: center;
+	}
+	
+	.breadcrumb_container .current .share{
+		    justify-content: center;
+	}
+	
+	.breadcrumb_container .current .share ul {
+		position: relative;
 	}
 	
 	/* item list */
