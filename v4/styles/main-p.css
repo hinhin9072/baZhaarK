@@ -69,6 +69,10 @@ only screen and (min-width: 240px) and (max-width: 1024px)
 	}
 	
 	footer ul.grid{
+		display: none;
+	}
+	
+	.showBtmSlide footer ul.grid {
 		display: block;
 	}
 	
