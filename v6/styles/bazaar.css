@@ -1,0 +1,189 @@
+.container.bazaar {
+    width: 100%;
+}
+
+.container.bazaar .bazaar_main.main-container {
+    padding: 0;
+    min-width: 100%;
+    width: 100%;
+    _background-color: #275680;
+}
+
+.container.style-05 > .visual-container{
+	background: #525659cc;
+}
+
+.container.style-05 .visual-container:after {
+    display: block;
+    background: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    content: "";
+}
+
+.container.featured .bazaar_main  ul{
+	padding: 0;
+	margin: 0;
+}
+
+.container.style-05 > .visual-container::before {
+    display: none;
+}
+
+.container.bazaar .BP_Menu{
+    border-radius: 0;
+}
+
+.container.bazaar .BP_Menu li.focus{
+	border-top-width: 5px;
+    border-top-style: solid;
+    border-color: #275680;
+}
+
+.container.bazaar .BP_Menu li {
+        min-width: 200px;
+    text-align: center;
+    display: inline-block;
+}
+
+.container.bazaar .BP_Menu ul {
+       display: block;
+}
+
+.card_container{
+	margin: 0 10px;
+	    display: inline-block;
+    position: relative;
+	box-shadow: 0 0 4px 2px rgba(59, 62, 77, 0.75);
+}
+
+.card{
+	display: inline-block;
+    width: 860px;
+    position: relative;
+}
+
+.NextBtn, .PrevBtn{
+	position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 12;
+    
+    border: none;
+	background: #ffb22c;
+    background-image: linear-gradient(to right, #ffb22c, #ffa200);
+    border-radius: 50%;
+    box-shadow: 0 0 4px 2px rgba(59, 62, 77, 0.75);
+    opacity: 0.7;
+}
+
+.NextBtn.disabled, .PrevBtn.disabled{
+	background: #a1caca;
+}
+
+.NextBtn:hover, .PrevBtn:hover{
+	
+    background: background: #ffa200;
+    background-image: linear-gradient(to right, #ffa200, #ffa200);
+    opacity: 1;
+}
+
+.NextBtn{
+	float: right;
+    left: 100%;
+    top: 50%;
+    margin: -25px 0 0 -10px;
+}
+
+.PrevBtn{
+	float: left;
+    left: 0%;
+    top: 50%;
+    margin: -25px 0 0 -15px;
+}
+
+.NextBtn i,.PrevBtn i{
+	border-color: white;
+}
+
+.container.bazaar .bazaar_main.main-container::after {
+    background: url(../images/sunshinecity/bg_contents_cmn_pc_01.png) center top repeat-x;
+    background-size: auto;
+    bottom: 80px;
+    height: 100px;
+    -webkit-animation: moveBgMainPc 20s infinite linear;
+    animation: moveBgCommonPc 20s linear;
+    animation-iteration-count: infinite;
+    display: block;
+    position: absolute;
+    width: 100%;
+    content: "";
+    margin: 0 0 -80px 0;
+}
+
+.full_slider_container {
+        width: 860px;
+    margin: 10px auto;
+    padding: 0;
+    position: relative;
+    z-index: 11;
+}
+
+.container.style-05 .full_slider_container .visual-container{
+	width: calc(300% + 90px);
+}
+
+.full_slider_container img{
+	width: 100%;
+	position: absolute;
+	left: 0;
+}
+
+.full_slider_container img.mainImg{
+	width: 100%;
+	position: relative;
+}
+
+@media only screen and (max-width: 1024px), only screen and (max-width: 1024px) and (min-width: 240px) {
+	.container.bazaar .bazaar_main.main-container {
+		margin: 0;
+	}
+	
+	.container.style-05 .full_slider_container .visual-container {
+		width: 300%;
+	}
+
+.container.bazaar .BP_Menu ul {
+    display: flex;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+	
+	.full_slider_container {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		box-shadow: none;
+		overflow: none;
+	}
+	
+	.card_container {
+		margin: 0;
+		display: inline-block;
+		position: relative;
+		box-shadow: none;
+		width: 33.3333333333%;
+		float: left;
+	}
+	
+	.card{
+		width: 100%;
+	}
+	
+	.NextBtn, .PrevBtn{
+		display: none;
+	}
+}

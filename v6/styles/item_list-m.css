@@ -1,0 +1,75 @@
+@media only screen and (max-width: 630px),
+only screen and (min-width: 240px) and (max-width: 630px) 
+{
+	
+	#item-main-list .pi-item-container{
+		    width: 100%;
+			margin: 5px auto 10px;
+			box-shadow: -2px 2px 2px -2px rgba(59, 62, 77, 0.75);
+			border-radius: 15px;
+			border: 1px solid #d5e3ed;
+			background: #fff;
+	}
+	
+	#item-main-list .pi-container{
+		max-width: 100%;
+		display: block;
+	}
+	
+	#item-main-list .pi-container .pi-image-container .pi-image img {
+		height: 200px;
+		display: block;
+		margin: 0 auto;
+	}
+	
+	#item-main-list .pi-container .pi-float.pi-indicator-container{
+		top: inherit;
+		bottom: -50px;
+	}
+	
+	#item-main-list .pi-item-container .pi-container .pi-indicator-container .pi-status-container{
+		display: flex;
+	}
+	
+	#item-main-list .pi-container .pi-indicator-container .pi-status{
+		margin-left: 10px;
+	}
+	
+	#item-main-list .pi-container .pi-content-container .pi-desc{
+		padding-top: 50px;
+		height: 200px;
+	}
+	
+	#item-main-list .pi-detail{
+		margin-top: 0;
+		display: inline-block !important;
+	}
+	
+	#item-main-list .pi-detail h4
+	{
+		color: #20599b;
+	}
+	
+	#item-main-list .pi-regionText{
+		line-height: 35px;
+		font-size: 12px;
+		display: inline-block !important;
+		    margin-left: 15px;
+	}
+	
+	#item-main-list .pi-container .pi-content-container .pi-desc .pi-name{
+		font-size: 18px;
+		font-weight: 600;
+	}
+	
+	.pi-container .pi-indicator-container .pi-status-container
+	{
+		    left: -10px;
+	}
+	
+	.pi-container .pi-indicator-container .pi-region
+	{
+		left: 10px;
+	}
+	
+}

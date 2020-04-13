@@ -1,0 +1,126 @@
+*{
+	font-family: "Noto Sans TC","Microsoft JhengHei","Open Sans",sans-serif;	
+}
+.slidershow{
+		width: 1261px;
+		
+}
+
+.colorT1{
+	background-color: #164182 !important;
+}
+
+.colorT2{
+	background-color: #fff     !important;
+}
+
+/*--------------header ----------------*/
+.header-style-21 .header-top{
+	height: 60px;
+}
+.header-style-21 .toplinks-wrapper {
+	background-color: #123469     !important;
+	padding: 0 20px;
+	height: 60px;
+}
+
+.header-style-21  .header-container {
+	
+}
+
+.header-style-21 .header-middle{
+	background-color: #fff     !important;
+	font-size:14px;
+		font-weight: bold;
+}
+
+.header-style-21 .toplinks-wrapper .header.links li a{
+	color: #fff     !important;
+	font-weight: bold;
+}
+
+.header-style-21 .language-currency-top .language-wrapper .switcher-trigger strong, .header-style-21 .language-currency-top .currency-wrapper .switcher-trigger strong{
+	color: #fff     !important;
+	font-weight: bold;
+}
+
+.header-style-21 .language-currency-top .language-wrapper .switcher-trigger, .header-style-21 .language-currency-top .currency-wrapper .switcher-trigger {
+	line-height: 60px;
+}
+
+.header-style-21 .toplinks-wrapper .header.links li a{
+	line-height: 60px;
+}
+
+.language-currency-container{
+	position: relative;
+    left: 120px;	
+}
+
+/* ------------- menu --------------*/
+.logo img{
+	position: relative;
+	left: 20px;
+	top: -50px;
+  width: 160px !important;
+  height: 160px;
+  /*background: red;*/
+  border-radius: 50%
+  
+}
+
+.header-style-21 .desktop-menu .sm_megamenu_menu > li > a {
+    color: #fff !important;
+	/*box-shadow: 0 0 9px 1px rgba(57, 57, 57, .2);*/
+	font-weight: bold;
+}
+
+.header-style-21 .desktop-menu .sm_megamenu_menu > li > a
+{
+	height: 80px;
+	line-height: 80px;
+}
+
+.sm_megamenu_wrapper_horizontal_menu ul.sm_megamenu_menu{
+	top: 80px;
+    position: absolute;
+}
+
+.header-style-21 .search-cart {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: 87px;
+}
+
+.hin-header{
+	position: absolute;
+    top: 36px;
+	z-index: 20;
+}
+
+.slidershow::before {
+  display: block;
+  background: url(../images/sunshinecity/bg_main_visual_01.png) center top repeat-x;
+  position: absolute;
+  z-index: 10;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  min-height: 260px;
+  content: "";
+}
+
+
+/* ------------- promo --------------*/
+.service-home {
+	width: 1290px;
+	background: rgb(79,149,255);
+	background: linear-gradient(90deg, d8ecfa 0%, rgba(32,109,230,1) 35%);
+	line-height: 1;
+	padding: 0;
+}
+
+.service-home ul li a{
+	color: #fff     !important;
+}

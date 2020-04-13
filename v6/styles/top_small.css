@@ -1,0 +1,11 @@
+.top-banner .main-container {
+    min-height: 55px;
+}
+
+.top-banner .visual-container::before {
+    min-height: 55px;
+}
+
+.top-banner .visual-container::after{
+	background: none;
+}
