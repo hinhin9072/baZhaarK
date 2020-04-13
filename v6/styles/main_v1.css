@@ -88,8 +88,8 @@
 }
 
 .toolbar {
-    padding: 10px 0;
-    margin:0 10px 20px;
+    padding: 10px 10px;
+	margin: 0 0 20px;
     border-top-width: 1px; 
  border-top-style: solid;
 
@@ -98,6 +98,10 @@
 
 	line-height: 32px;
 }
+
+#toolbar-filter{
+		display: none;
+	}
 
 .toolbar-bottom .toolbar {
     margin-bottom: 20px;

@@ -274,7 +274,6 @@ only screen and (min-width: 240px) and (max-width: 630px)
 	}
 	
 	#item-main-list .pi-container .pi-content-container .pi-desc .pi-name{
-		font-size: 18px;
 		font-weight: 600;
 		text-overflow: ellipsis;
 		overflow: hidden;

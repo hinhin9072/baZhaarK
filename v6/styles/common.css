@@ -39,6 +39,10 @@ a:hover{
 	display: none !important;
 }
 
+.breadcrumb_container .current-page{
+		font-weight: 600;
+}
+
 .noselect, img, button, svg, .pi-ite, .item {
 	-webkit-tap-highlight-color: transparent;
 }
@@ -396,7 +400,6 @@ only screen and (min-width: 240px) and (max-width: 630px)
 	
 	.breadcrumb_container .current-page{
 		text-align: left;
-		font-weight: 600;
 	}
 	
 	.breadcrumb_container div.current-page{
