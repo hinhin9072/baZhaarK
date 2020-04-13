@@ -63,7 +63,7 @@
     color: #222;
     background-color: #FFFFFF;
     border-radius: 10px;
-    border: 1px solid #e8f4f9;
+    border: 1px solid #e4eaea;
 }
 
 .style-04 i.down{
@@ -87,7 +87,7 @@
     width: 6px;
     height: 6px;
     background:rgba(59, 62, 77, 0.75);
-	border: 1px solid #e8f4f9;
+	border: 1px solid #e4eaea;
 	margin-right: 3px;
 }
 
@@ -116,5 +116,5 @@
 }
 
 .side-menu-container .box-container.box-category li ul li:hover{
-	background: #e8f4f9;
+	background: #e4eaea;
 }
