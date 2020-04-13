@@ -40,20 +40,19 @@
 }
 
 
-.breadcrumb_container .current .share{
-	justify-content: flex-end;
-    flex-grow: 5;
-    display: flex;
-	position: relative;
-}
-
-.breadcrumb_container .current .share ul {
+.share{
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0px;
 }
 
-.breadcrumb_container .current .share li {
+.container.featured .share ul {
+    right: 0;
+    bottom: 0;
+	margin: 0;
+}
+
+.share li {
 	display: inline-block;
 }
 
@@ -303,10 +302,6 @@ only screen and (min-width: 240px) and (max-width: 1024px)
 		width: 120px;
 	}
 	
-	footer {
-		margin-bottom: 115px;
-	}
-	
 	.container .box-container.PDP_Menu.sticky{
 		margin-top: 0;
 	}
@@ -324,6 +319,30 @@ only screen and (min-width: 240px) and (max-width: 1024px)
 	.featured header h2{
 		margin: 0 0 10px 0;
 	}
+}
+
+.container.featured .tab-container-box .tags ul {
+    display: flex;
+    padding: 0 10px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.tags .pi-tag-list .pi-tag-item {
+    display: flex;
+    padding: 2px 10px;
+    margin: 0 4px 0 0;
+    background: #e4eaea;
+    border-radius: 10px;
+    line-height: 18px;
+    width: auto;
+    min-width: 30px;
+    cursor: pointer;
 }
 
 #scroller{

@@ -622,7 +622,7 @@ li.sep.colorBlue::before {
 	cursor: pointer;
 }
 
-.top-banner a{
+.top-banner a, .top-banner:hover a{
     color: #fff;
     text-decoration: none;
 	padding: 4px 20px 0 15px;
