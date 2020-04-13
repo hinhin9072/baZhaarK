@@ -163,7 +163,9 @@
 }
 
 @media only screen and (max-width: 1024px), only screen and (max-width: 1024px) and (min-width: 240px) {
-	
+	.container.bazaar .BP_Menu li {
+        min-width: 100px;
+}
 	.container.bazaar .bazaar_main.main-container {
 		margin: 0;
 	}
