@@ -1,0 +1,151 @@
+<html>
+<body>
+	<h1>Demo</h1>
+	<h2>Execute "Lib Code" in debugger may see the result</h2>
+	may refer to <a href="https://optimistic-raman-ddee0f.netlify.app/index_v7">https://optimistic-raman-ddee0f.netlify.app/index_v7</a> for expected behavior.
+	<div style="padding-top: 20px; clear: both"></div>
+	<h1>Lib Code, need to include</h1>
+	<h2>//singleton, keep one "bazhaarkCusLibrary" only	</h2>
+	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="script">
+	
+	if(!window.bazhaarkCusLibrary){
+		var bazhaarkCusLibrary = (function(){
+			var instance;
+			function createInstance() {
+				function cusObj(){
+					this._helpers = {};
+				};
+				cusObj.prototype.nameSpace = function createNameSpace(clsName, cls){
+					if(cusObj.prototype[clsName] == null){
+						cusObj.prototype[clsName] = cls;
+					} else {
+						//alert('duplicated');
+					}
+				}
+				
+				cusObj.prototype.createHelper = function createNameSpace(helperName, helper){
+					if(this._helpers[helperName] == null){
+						this._helpers[helperName] = helper;
+					} else {
+						//alert('duplicated');
+					}
+				}
+				
+				return new cusObj;								
+			}
+			
+			return {
+				getInstance: function(){
+					if (!instance) {
+						instance = createInstance();
+					}
+					return instance;
+				}
+			};
+		})();
+	}
+</code>
+	</textarea>	
+	<h2>//may directly include the following in code</h2>
+		<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="script">
+	bazhaarkLib = bazhaarkCusLibrary.getInstance();
+	bazhaarkLib.createHelper('addEvent', function(evnt, elem, func) {
+		if (elem.addEventListener)  // W3C DOM
+			elem.addEventListener(evnt,func,false);
+		else if (elem.attachEvent) { // IE DOM
+			elem.attachEvent("on"+evnt, func);
+		}
+		else { // No much to do
+			elem["on"+evnt] = func;
+		}
+	});
+
+	var cus_scrollHeader = {
+		status: {
+			scrollPos: 0,
+			delta: 80
+		},
+		scrollAction: function(me) {
+			var currentTop = Math.abs((document.body.getBoundingClientRect()).top);
+			if(Math.abs(currentTop - me.status.scrollPos) < me.status.delta){
+				return;
+			}
+			
+			var body = document.getElementsByTagName("BODY")[0];
+			if (currentTop > me.status.delta) {
+				if (currentTop > me.status.scrollPos){
+					body.className = body.className.replace(' scroll-up', '');
+					if(body.className.indexOf('scroll-down') <0){
+						body.className = body.className + ' scroll-down';
+					}
+				} else {
+					body.className = body.className.replace(' scroll-down', '');
+					if(body.className.indexOf('scroll-up') <0){
+						body.className = body.className + ' scroll-up';
+					}				
+				}			
+			} else {
+				body.className = body.className.replace(' scroll-down', '').replace(' scroll-up', '');
+			}
+			
+			setTimeout(function(){
+				
+				
+			}, 0)
+		  
+			me.status.scrollPos = currentTop;
+		},
+		init: function(cmp){
+			var me = this;
+			me.components = cmp;			
+			bazhaarkLib._helpers.addEvent('scroll', window, function(){me.scrollAction(me)});
+		}
+	}
+</code>
+	</textarea>
+	
+	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="style">
+	.header-top{	
+		transition: .2s linear;
+		transition-property: all;
+		transition-duration: 0.2s;
+		transition-timing-function: linear;
+		transition-delay: 0s;
+	}
+
+	.scroll-down .header-top{
+		position: fixed;
+		z-index: 501;
+		width: 100%;
+		top: -65px;
+	}
+
+	.scroll-up .header-top{
+		position: fixed;
+		z-index: 501;    
+		width: 100%;
+		top: -5px;
+	}
+
+	.scroll-up #header-bar h1 {
+		top: 0px;
+	}
+
+
+	.scroll-up .top-banner .menu-on-top{
+		top: 50px;
+	}
+</code>
+	</textarea>	
+<h2>//execute when dom element is ready, after theme-js.js is executed.</h2>	
+	theme-js.js also contains scripts about scrolling which can be buggy if Lib Code is executed first and user starts scrolling.
+	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="script">
+	bazhaarkLib.scrollHeader.init();
+</code>
+	</textarea>
+</body>
+</html>

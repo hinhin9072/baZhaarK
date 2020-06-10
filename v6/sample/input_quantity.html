@@ -235,7 +235,7 @@
 	</style>
 </head>
 <body>
-	<h1>Fragment from Site, no need to change</h1>
+	<h1>Fragment reference from the existing content</h1>
 	code fragment from <a href="http://bazhaark.megashoppes.com/hk/spanish-white-pig-frozen-pork-belly-400g-13">http://bazhaark.megashoppes.com/hk/spanish-white-pig-frozen-pork-belly-400g-13</a>
 	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
 <code type="html">
@@ -244,9 +244,21 @@
 	</div>
 </code>
 	</textarea>
+	<h1>Code that need to be changed in the existing code</h1>
+	code fragment from <a href="http://bazhaark.megashoppes.com/hk/spanish-white-pig-frozen-pork-belly-400g-13">http://bazhaark.megashoppes.com/hk/spanish-white-pig-frozen-pork-belly-400g-13</a>
+	
+	<br/><br/>
+	1. min="0" -> min="1"
+	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="html">
+	<div class="control">
+		<input type="number" name="qty" id="qty" min="1" value="1" title="數量 " class="input-text qty" data-validate="{&quot;required-number&quot;:true,&quot;validate-item-quantity&quot;:{&quot;minAllowed&quot;:1,&quot;maxAllowed&quot;:10000}}">
+	</div>
+</code>
+	</textarea>	
 	<h1>Demo</h1>
 	<div class="control">
-		<input type="number" name="qty" id="qty" min="0" value="1" title="數量 " class="input-text qty" data-validate="{&quot;required-number&quot;:true,&quot;validate-item-quantity&quot;:{&quot;minAllowed&quot;:1,&quot;maxAllowed&quot;:10000}}">
+		<input type="number" name="qty" id="qty" min="1" value="1" title="數量 " class="input-text qty" data-validate="{&quot;required-number&quot;:true,&quot;validate-item-quantity&quot;:{&quot;minAllowed&quot;:1,&quot;maxAllowed&quot;:10000}}">
 	</div>
 	<div style="padding-top: 20px; clear: both"></div>
 	<h1>Lib Code, need to include</h1>
