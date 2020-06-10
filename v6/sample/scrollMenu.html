@@ -1,0 +1,175 @@
+<html>
+<body>
+	<h1>Code that need to be changed in the existing code</h1>
+	code fragment from <a href="http://bazhaark.megashoppes.com/hk/spanish-white-pig-frozen-pork-belly-400g-13">http://bazhaark.megashoppes.com/hk/spanish-white-pig-frozen-pork-belly-400g-13</a>
+	
+	<br/><br/>
+	1. href="#maincontent" -> href="#tab-overviews"
+	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="html">
+	<li id="menu-overviews" class="PDP_Menu_Item active focus" data-tab="tab-1">
+		<a href="#maincontent">產品資料</a>
+	</li>
+</code>
+	</textarea>
+	2. style update
+	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="style">
+	.container01 .box-container.PDP_Menu.sticky{
+		top: 60px;
+	}
+
+	//overflow will make sticky style not working, any reason to use overflow there?
+	body:not(.layout-boxed) .page-wrapper {
+		overflow-x: initial;
+	}
+</code>
+	</textarea>	
+	
+	
+	
+	<h1>Demo</h1>
+	<h2>Execute "Lib Code" in debugger may see the result</h2>
+	may refer to <a href="https://optimistic-raman-ddee0f.netlify.app/item_detail">https://optimistic-raman-ddee0f.netlify.app/item_detail</a> for expected behavior.
+	<div style="padding-top: 20px; clear: both"></div>
+	<h1>Lib Code, need to include</h1>
+	<h2>//singleton, keep one "bazhaarkCusLibrary" only	</h2>
+	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="script">
+	
+	if(!window.bazhaarkCusLibrary){
+		var bazhaarkCusLibrary = (function(){
+			var instance;
+			function createInstance() {
+				function cusObj(){
+					this._helpers = {};
+				};
+				cusObj.prototype.nameSpace = function createNameSpace(clsName, cls){
+					if(cusObj.prototype[clsName] == null){
+						cusObj.prototype[clsName] = cls;
+					} else {
+						//alert('duplicated');
+					}
+				}
+				
+				cusObj.prototype.createHelper = function createNameSpace(helperName, helper){
+					if(this._helpers[helperName] == null){
+						this._helpers[helperName] = helper;
+					} else {
+						//alert('duplicated');
+					}
+				}
+				
+				return new cusObj;								
+			}
+			
+			return {
+				getInstance: function(){
+					if (!instance) {
+						instance = createInstance();
+					}
+					return instance;
+				}
+			};
+		})();
+	}
+</code>
+	</textarea>	
+	<h2>//may directly include the following in code</h2>
+		<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="script">
+	bazhaarkLib = bazhaarkCusLibrary.getInstance();
+	
+	bazhaarkLib.createHelper('addEvent', function(evnt, elem, func) {
+		if (elem.addEventListener)  // W3C DOM
+			elem.addEventListener(evnt,func,false);
+		else if (elem.attachEvent) { // IE DOM
+			elem.attachEvent("on"+evnt, func);
+		}
+		else { // No much to do
+			elem["on"+evnt] = func;
+		}
+	});
+	
+	var cus_scrollMenu = {
+		components: {
+			scroller: null
+		},
+		getPosition: function(element) {
+			var x = 0;
+			var y = 0;
+			while ( element ) {
+				x += element.offsetLeft - element.scrollLeft + element.clientLeft;
+				y += element.offsetTop - element.scrollLeft + element.clientTop;
+				element = element.offsetParent;
+			}
+
+			return { x: x, y: y };
+		},
+		scrollAction: function(me) {
+			var offset = 30,
+			scrollTop = document.body.scrollTop || window.scrollY;
+			
+			var offsetTop = scrollTop + offset;
+			
+			with(me.components){
+				if (offsetTop >= me.getPosition(details.index).y && offsetTop < me.getPosition(info.index).y) {
+					scroller.style.left = details.tab.offsetLeft + 'px';
+					scroller.style.width = details.tab.offsetWidth + 'px';
+				} else if(offsetTop >= me.getPosition(info.index).y && offsetTop < me.getPosition(offers.index).y){
+					scroller.style.left = info.tab.offsetLeft + 'px';
+					scroller.style.width = info.tab.offsetWidth + 'px';
+				} else if(offsetTop >= me.getPosition(offers.index).y && offsetTop < me.getPosition(reviews.index).y){
+					scroller.style.left = offers.tab.offsetLeft + 'px';
+					scroller.style.width = offers.tab.offsetWidth + 'px';
+				} else if(offsetTop >= me.getPosition(reviews.index).y){
+					scroller.style.left = reviews.tab.offsetLeft + 'px';
+					scroller.style.width = reviews.tab.offsetWidth + 'px';
+				} else {
+					scroller.style.left = overviews.tab.offsetLeft + 'px';
+					scroller.style.width = overviews.tab.offsetWidth + 'px';
+				}
+			}
+		},
+		init: function(cmp){
+			var me = this;
+			me.components = cmp;			
+			bazhaarkLib._helpers.addEvent('scroll', window, function(){me.scrollAction(me)});
+		}
+	}
+	
+	bazhaarkLib.nameSpace('scrollMenu', cus_scrollMenu);
+</code>
+	</textarea>	
+<h2>//execute when dom element is ready</h2>	
+	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="script">
+	var bazhaarkLib_scrollCmp = {
+		scroller: document.getElementById('scroller'),
+		overviews: {
+			index: document.getElementById('maincontent'),
+			tab: document.getElementById('menu-overviews')
+		},
+		details: {
+			index: document.getElementById('tab-details'),
+			tab: document.getElementById('menu-details')
+		},
+		info: {
+			index: document.getElementById('tab-info'),
+			tab: document.getElementById('menu-info')
+		},
+		offers: {
+			index: document.getElementById('tab-offers'),
+			tab: document.getElementById('menu-offers')
+		},
+		reviews: {
+			index: document.getElementById('tab-reviews'),
+			tab: document.getElementById('menu-reviews')
+		}
+	}
+
+	bazhaarkLib.scrollMenu.init(bazhaarkLib_scrollCmp);
+</code>
+	</textarea>
+</body>
+</html>

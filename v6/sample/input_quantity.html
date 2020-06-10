@@ -41,7 +41,7 @@
 	</script>
 	
 	<script>
-		var bazhaarkLib = bazhaarkCusLibrary.getInstance();
+		bazhaarkLib = bazhaarkCusLibrary.getInstance();
 		bazhaarkLib.createHelper('insertBefore', function(newNode, referenceNode) {
 			referenceNode.parentNode.insertBefore(newNode, referenceNode);
 		});
@@ -235,18 +235,267 @@
 	</style>
 </head>
 <body>
+	<h1>Fragment from Site, no need to change</h1>
 	code fragment from <a href="http://bazhaark.megashoppes.com/hk/spanish-white-pig-frozen-pork-belly-400g-13">http://bazhaark.megashoppes.com/hk/spanish-white-pig-frozen-pork-belly-400g-13</a>
 	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
-&lt;div class=&quot;control&quot;&gt;
-	&lt;input type=&quot;number&quot; name=&quot;qty&quot; id=&quot;qty&quot; min=&quot;0&quot; 
-	value=&quot;1&quot; title=&quot;數量 &quot; class=&quot;input-text qty&quot; 
-	data-validate=&quot;{&amp;quot;required-number&amp;quot;:true,&amp;quot;validate-item-quantity&amp;quot;:{&amp;quot;minAllowed&amp;quot;:1,&amp;quot;maxAllowed&amp;quot;:10000}}&quot;&gt;
-&lt;/div&gt;
-	</textarea>
-	
+<code type="html">
 	<div class="control">
 		<input type="number" name="qty" id="qty" min="0" value="1" title="數量 " class="input-text qty" data-validate="{&quot;required-number&quot;:true,&quot;validate-item-quantity&quot;:{&quot;minAllowed&quot;:1,&quot;maxAllowed&quot;:10000}}">
 	</div>
+</code>
+	</textarea>
+	<h1>Demo</h1>
+	<div class="control">
+		<input type="number" name="qty" id="qty" min="0" value="1" title="數量 " class="input-text qty" data-validate="{&quot;required-number&quot;:true,&quot;validate-item-quantity&quot;:{&quot;minAllowed&quot;:1,&quot;maxAllowed&quot;:10000}}">
+	</div>
+	<div style="padding-top: 20px; clear: both"></div>
+	<h1>Lib Code, need to include</h1>
+	<h2>//singleton, keep one "bazhaarkCusLibrary" only	</h2>
+	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="script">
+	
+	if(!window.bazhaarkCusLibrary){
+		var bazhaarkCusLibrary = (function(){
+			var instance;
+			function createInstance() {
+				function cusObj(){
+					this._helpers = {};
+				};
+				cusObj.prototype.nameSpace = function createNameSpace(clsName, cls){
+					if(cusObj.prototype[clsName] == null){
+						cusObj.prototype[clsName] = cls;
+					} else {
+						//alert('duplicated');
+					}
+				}
+				
+				cusObj.prototype.createHelper = function createNameSpace(helperName, helper){
+					if(this._helpers[helperName] == null){
+						this._helpers[helperName] = helper;
+					} else {
+						//alert('duplicated');
+					}
+				}
+				
+				return new cusObj;								
+			}
+			
+			return {
+				getInstance: function(){
+					if (!instance) {
+						instance = createInstance();
+					}
+					return instance;
+				}
+			};
+		})();
+	}
+</code>
+	</textarea>	
+	<h2>//may directly include the following in code</h2>
+		<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="script">
+	bazhaarkLib = bazhaarkCusLibrary.getInstance();
+	bazhaarkLib.createHelper('insertBefore', function(newNode, referenceNode) {
+		referenceNode.parentNode.insertBefore(newNode, referenceNode);
+	});
+	bazhaarkLib.createHelper('insertAfter', function(newNode, referenceNode) {
+		referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+	});		
+	
+	var cus_quantityInput = {
+		components: {
+			target: null,
+			up: null,
+			down: null
+		},
+		checkDisable: function(){
+			var me = this;
+			var target = me.components.target,
+			min = target.getAttribute('min'),
+			max = target.getAttribute('max');
+			
+			var value = parseFloat(target.value);
+			if(value == max){
+				me.components.up.className = 'quantity-nav disabled';
+			} else {
+				me.components.up.className = 'quantity-nav';
+			}
+			
+			if(value == min){
+				me.components.down.className = 'quantity-nav disabled';
+			} else {
+				me.components.down.className = 'quantity-nav';
+			}
+		},
+		createHandler: function(increment){
+			var me = this;
+			var handler = function() {
+				var target = me.components.target,
+				min = target.getAttribute('min'),
+				max = target.getAttribute('max');
+				
+				var oldVal = parseFloat(target.value);
+				var newVal = oldVal + increment;
+				if(max && newVal > oldVal){
+					if (newVal > max){
+						newVal = oldVal;
+					}
+				}
+				else if(min && newVal < oldVal){
+					if (newVal < min){
+						newVal = oldVal;
+					}
+				}
+				
+				target.value = newVal;
+				target.dispatchEvent(new Event('input', { bubbles: true }));
+			};
+			
+			return handler;
+		},
+		ceateValidationHandler: function(increment){
+			var me = this;
+			var handler = function() {
+				me.checkDisable();
+			};
+			
+			return handler;
+		},
+		createButton: function(type){
+			var me = this;
+			var container = document.createElement("div");
+			var btn = document.createElement("div");
+			var increment = 0;
+			
+			container.className = "quantity-nav";
+			btn.className = "quantity-button quantity-" + type;
+			btn.innerHTML = '<span></span>';
+			increment += type == 'up'? 1: -1;
+			btn.onclick = me.createHandler(increment);
+			
+			container.appendChild(btn);
+			me.components[type] = container;
+			return container;
+		},
+		create: function(target){
+			var me = this;
+			me.components.target = target;
+			me.createButton('up');
+			me.createButton('down')
+			
+			bazhaarkLib._helpers.insertAfter(me.components.up, me.components.target);
+			bazhaarkLib._helpers.insertBefore(me.components.down, me.components.target);				
+			me.components.target.oninput = me.ceateValidationHandler();
+			me.checkDisable();
+		},
+	}
+	
+	bazhaarkLib.nameSpace('inputNumberObj', cus_quantityInput);
+</code>
+	</textarea>
+	
+			<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="style">
+	/*needed for quantity lib*/
+	.control {
+	  position: relative;
+	}
+
+	input[type=number]::-webkit-inner-spin-button,
+	input[type=number]::-webkit-outer-spin-button
+	{
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
+
+	input[type=number]
+	{
+	  -moz-appearance: textfield;
+	}
+
+	.control input {
+	  width: 50px;
+	  height: 52px;
+	  line-height: 1.65;
+	  float: left;
+	  display: block;
+	  padding: 0;
+	  margin: 0;
+	  text-align: center;
+	  border: 1px solid #979797;
+	}
+
+	.control input:focus {
+	  outline: 0;
+	}
+
+	.quantity-nav {
+	  float: left;
+	  position: relative;
+	  height: 52px;
+	}
+
+	.quantity-button {
+		cursor: pointer;
+		border: 1px solid #979797;
+		height: calc(100% - 2px);
+		height: 100%\9;
+		width: 20px;
+		text-align: center;
+		padding: 0 5px;
+		font-size: 18px;			
+		cursor: pointer;
+		color: #fff;
+		background: #3372c5;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+	}
+	
+	.quantity-nav.disabled .quantity-button{
+		background: #a1caca;
+	}
+	
+	.quantity-button span{
+		font-family: proxima_nova, Arial, "Heiti TC", "Microsoft JhengHei", "Microsoft Yahei", PMingLiU, sans-serif;
+		position: relative;
+		font-weight: 600;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		float: left;
+		width: 100%;
+	}
+
+	.quantity-button.quantity-up {
+		border-left: 0;
+		border-radius: 0 10px 10px 0;
+	}
+	
+	.quantity-button.quantity-up span:before {
+		content: '+';
+	}
+
+	.quantity-button.quantity-down {
+		border-right: 0;
+		border-radius: 10px 0 0 10px;			
+	}
+	
+	.quantity-button.quantity-down span:before {
+		content: '-';
+	}
+</code>
+	</textarea>	
+<h2>//execute when dom element is ready</h2>	
+	<textarea style="width: 100%; height: 200px; padding: 10px; margin:10px 0">
+<code type="script">
+	bazhaarkLib.inputNumberObj.create(document.getElementById('qty'));
+</code>
+	</textarea>	
 	
 	<script>
 		bazhaarkLib.inputNumberObj.create(document.getElementById('qty'));
