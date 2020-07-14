@@ -129,6 +129,10 @@ Main Components
    position: relative;
 }
 
+.cd-section:nth-of-type(2) > div h2:hover{
+   color: #ffb027;
+}
+
 .cd-section .content-container{
 	position: relative;
 	margin-top: -10px;
@@ -236,12 +240,32 @@ Main Components
    display: inline-block;
 }
 
+.cd-section .link-container{
+	padding: 10px 20px;
+	background: #fff;
+	border-radius: 10px;
+	display: inline-block;
+    box-shadow: 2px 2px 0px 2px #1a1574;
+}
+
+.cd-section .content-container .link-container:hover{
+   box-shadow: 2px 2px 0px 2px #ffb027;
+   color: #ffb027;
+}
+
+.cd-section .content-container a, .cd-section .content-container .link-container{
+   color: #1a1574;
+}
 .cd-section:nth-of-type(4) .content-container:nth-of-type(2){
-   top: -30px;
+   top: -40px;
 }
 
 .cd-section:nth-of-type(4) .content-container:nth-of-type(3){
-   top: 10px;
+   top: 0px;
+}
+
+.cd-section:nth-of-type(4) .content-container:nth-of-type(4){
+   top: 40px;
 }
 
 
