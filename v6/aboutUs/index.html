@@ -12,7 +12,7 @@
 
 <body data-hijacking="off" data-animation="scaleDown">
 	<section class="cd-section visible">
-		<div class="center">
+		<div class="center" style="cursor: pointer;" onclick="scrollToEl('start');">
 			<h2>BazHaarK</h2>
 			<div class="arrow-container">
 				<i class="arrow down"></i>
@@ -24,30 +24,32 @@
 		
 	</section>
 
-	<section class="cd-section">
+	<section id="start" class="cd-section">
 		<div class="center">
 			<div class="circle-container show-on-scroll scroll-style-2">
 				<div class="loader"></div>
 				<div class="loader"></div>
 			
 				<div class="content-container">
-					<h2 class="show-on-scroll scroll-style-2">鯊圈</h2>
-					<h2 class="show-on-scroll scroll-style-2 step2">Bazaar in HK</h2>
+					<a target="blank" href="https://www.bazhaark.com/hk/"><h2 class="show-on-scroll scroll-style-2">鯊圈</h2></a>
+					<a target="blank" href="https://www.bazhaark.com/hk/"><h2 class="show-on-scroll scroll-style-2 step2">Bazaar in HK</h2></a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="cd-section">
+	<section id="shopGuide" class="cd-section">
 		<div class="center">
-			<h2 class="show-on-scroll scroll-style-1">Shop @ BazHaarK</h2>
+		<div class="content-container">
+				<a target="blank" href="https://www.bazhaark.com/hk/featured-produces"><h2 class="link-container show-on-scroll scroll-style-1">#Shop@BazHaarK</h2></a>
+			</div>
 			<h2 class="show-on-scroll"><img src="https://image.shutterstock.com/image-vector/flat-icons-design-set-online-600w-1031075566.jpg" width="200" height="200"></img></h2>
 			
 			
 		</div>
 	</section>
 
-	<section class="cd-section">
+	<section id="feature" class="cd-section">
 		<div class="center">
 			<div class="circle-container show-on-scroll scroll-style-2">
 				<div class="circle" style="animation-delay: 0s"></div>
@@ -62,12 +64,18 @@
 			<div class="content-container">
 				<h2 class="show-on-scroll scroll-style-3 step2">仿如置身市集派對</h2>
 			</div>
+			<div class="content-container">
+				<a target="blank" href="https://www.bazhaark.com/bazaar"><h2 class="link-container show-on-scroll scroll-style-3 step3">#特色活動任你選!</h2></a>
+			</div>
 		</div>
 	</section>
 	
 	<section class="cd-section">
 		<div class="center">
-			<h2 class="show-on-scroll scroll-style-2"><img src="https://www.bazhaark.com/media/logo/default/icon.png"></img></h2>
+			<h2 class="show-on-scroll scroll-style-2"><a target="blank" href="https://www.bazhaark.com/hk/featured-produces"><img src="https://www.bazhaark.com/media/logo/default/icon.png"></img></a></h2>
+			<div class="content-container" style="margin-top: 10px;">
+				<a target="blank" href="https://www.bazhaark.com/hk/"><h2 class="link-container show-on-scroll scroll-style-2 step2">Shop Now</h2></a>
+			</div>
 		</div>
 	</section>
 <script src="js/jquery-2.1.4.js"></script>
