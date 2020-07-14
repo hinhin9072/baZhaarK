@@ -4,6 +4,13 @@ var scroll = window.requestAnimationFrame ||
              function(callback){ window.setTimeout(callback, 1000/60)};
 var elementsToShow = document.querySelectorAll('.show-on-scroll'); 
 
+function scrollToEl(id){
+	document.getElementById(id).scrollIntoView({
+		behavior: 'smooth', // smooth scroll
+		block: 'start' // the upper border of the element will be aligned at the top of the visible part of the window of the scrollable area.
+	})
+}
+
 function loop() {
 
     Array.prototype.forEach.call(elementsToShow, function(element){
