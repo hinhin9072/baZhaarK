@@ -105,7 +105,6 @@ define([
 			if (this.element.get(0) === document.activeElement) {
                 this.setActiveState(true);
             }
-			this.element.on('focus', this.setActiveState.bind(this, true));
 			*/
 			var inputVal = this.element.get(0).value;
 			if(inputVal){
@@ -117,9 +116,9 @@ define([
 			} else {
 				this.setActiveState(false);
 			}
-
-            //this.element.on('focus', this.setActiveState.bind(this, true));
+            
 			//Bazhaark
+			//this.element.on('focus', this.setActiveState.bind(this, true));
 			this.element.on('keyup', this._onKeyUp);
             this.element.on('keydown', this._onKeyDown);
             // Prevent spamming the server with requests by waiting till the user has stopped typing for period of time
