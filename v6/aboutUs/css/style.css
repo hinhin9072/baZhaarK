@@ -56,6 +56,7 @@ Main Components
     display: table-cell;
     vertical-align: middle;
 	width: 100vw;
+	position: relative;
 }
 
 .cd-section,  .cd-section > div{
