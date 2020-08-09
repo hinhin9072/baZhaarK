@@ -61,6 +61,7 @@ Main Components
 
 .cd-section,  .cd-section > div{
   height: 100vh;
+	    overflow: hidden;
 }
 .cd-section h2 {
   text-align: center;
